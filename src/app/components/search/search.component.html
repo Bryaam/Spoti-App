@@ -3,10 +3,12 @@
     <input #searchBox type="text" (keyup)="search(searchBox.value)" class="form-control" placeholder="Serch artist..."/>
   </div>
 </div>
+<app-loading *ngIf="loading"></app-loading>
+<app-cards *ngIf="!loading" [items]="artists"></app-cards>
 
-<div class="card-columns m-5">
+<!-- <div class="card-columns m-5">
   <div class="card" *ngFor="let artist of artists">
-    <img class="card-img-top" [src]="artist.images[0].url" [alt]="artist.name">
+    <img class="card-img-top" [src]="artist.images | noimage" [alt]="artist.name">
     <div class="card-body">
       <h5 class="card-title">{{ artist.name }}</h5>
       <p class="card-text">
@@ -14,4 +16,4 @@
       </p>
     </div>
   </div>
-</div>
+</div> -->
